@@ -11,7 +11,7 @@ const mockStore = configureMockStore(middlewares);
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  const store = mockStore();
+  const store = mockStore({app: {isFetching: false, data: []}});
   ReactDOM.render(<Provider store={store}><App /></Provider>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
