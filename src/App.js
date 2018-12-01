@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import './App.css';
 import Header from './components/header';
+import WaterTable from './components/water-table';
 import { mapStateToProps, mapDispatchToProps } from './App.redux';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+        <WaterTable data={this.props.waterTests} />
       </div>
     );
   }
@@ -25,4 +27,4 @@ App.propTypes = {
   waterTests: PropTypes.array.isRequired
 };
 
-export default connect (mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

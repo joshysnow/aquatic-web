@@ -6,10 +6,12 @@ const requestData = () => ({
 });
 
 export const RECEIVED_DATA = 'app/received_data';
-const receivedData = (data) => ({
-  type: RECEIVED_DATA,
-  data
-});
+const receivedData = (data) => {
+  return {
+    type: RECEIVED_DATA,
+    data: data === undefined ? [] : data
+  };
+};
 
 export function fetchWaterTests() {
   return dispatch => {
@@ -18,7 +20,7 @@ export function fetchWaterTests() {
     return fetch(`http://localhost:8000/water`)
       .then(
         response => response.json(),
-        error => console.log(`Error fetching water tests: ${error}`)
+        error => console.log(error)
       )
       .then(json => dispatch(receivedData(json)));
   };
