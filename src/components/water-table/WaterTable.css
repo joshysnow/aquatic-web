@@ -1,0 +1,4 @@
+.water-table__row {
+  display: flex;
+  flex-direction: row;
+}
