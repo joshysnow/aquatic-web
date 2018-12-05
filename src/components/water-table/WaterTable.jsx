@@ -6,11 +6,7 @@ import WaterRow from '../water-row';
 class WaterTable extends PureComponent {
   renderRows = () => {
     const data = this.props.data;
-
-    return Object.keys(data).map((key) => {
-      const value = data[key];
-      return <WaterRow key={key} timestamp={value.date} ph={value.ph} />;
-    });
+    return Object.keys(data).map((key) => <WaterRow key={key} {...data[key]} />);
   };
 
   render() {
