@@ -1,0 +1,10 @@
+.water-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.water-col {
+  display: flex;
+  flex-direction: row;
+}

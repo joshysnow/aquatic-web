@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './WaterTable.css';
+import WaterRow from '../water-row';
 
 class WaterTable extends PureComponent {
   renderRows = () => {
@@ -8,7 +9,7 @@ class WaterTable extends PureComponent {
 
     return Object.keys(data).map((key) => {
       const value = data[key];
-      return <div className='water-table__row'>{`${value.date} ph${value.ph}`}</div>
+      return <WaterRow key={key} timestamp={value.date} ph={value.ph} />;
     });
   };
 
