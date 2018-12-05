@@ -7,7 +7,7 @@ class WaterRow extends PureComponent {
   render() {
     return (
       <div className='water-row'>
-        {this.props.timestamp && <div className='water-col'>{moment(this.props.timestamp).format('MMM Do YYYY')}</div>}
+        {this.props.timestamp && <div className='water-col'>{moment(this.props.timestamp).format('MMM Do YYYY h:mm a')}</div>}
         {this.props.ph != null && <div className='water-col'>{`PH ${this.props.ph}`}</div>}
         {this.props.kh != null && <div className='water-col'>{`KH ${this.props.kh}`}</div>}
         {this.props.gh != null && <div className='water-col'>{`GH ${this.props.gh}`}</div>}
